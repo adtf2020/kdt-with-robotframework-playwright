@@ -1,0 +1,15 @@
+{
+  "editor.autoClosingBrackets": "always",
+  "editor.formatOnSave": true,
+  "editor.detectIndentation": false,
+  "editor.tabSize": 2,
+  "files.watcherExclude": {
+    "**/.git/**": true,
+    "**/ve*/**": true,
+    "**/venv*/**": true
+  },
+  "formatFiles.extensionsToInclude": "robot,resource",
+  "robot.completions.keywords.format": "First upper",
+  "robot.editor.4spacesTab": false,
+  "robot.language-server.python": "/home/craft/workspace/adtf_2020/robotframework-spikes/venv-au/bin/python3"
+}

@@ -1,0 +1,4 @@
+robotframework==4.1
+robotframework-assertion-engine==0.2.0
+robotframework-browser==6.0.0
+robotframework-pythonlibcore==3.0.0

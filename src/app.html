@@ -1,0 +1,38 @@
+<template>
+  <h1 id="heading">${heading}</h1>
+
+  <form submit.trigger="addTodo()">
+    <label>
+      <select value.bind="selectedCategory" data-testid="select.category">
+        <option value="">Choisir...</option>
+        <option repeat.for="category of categories" value.bind="category">
+          ${category}
+        </option>
+      </select>
+    </label>
+    <input type="text" value.bind="todoDescription" data-testid="input.text.description" placeholder="Que faire ?"
+      focus.bind="descriptionHasFocus">
+    <button type="submit" disabled.bind="!todoDescription">Ajouter</button>
+  </form>
+
+  <ul>
+    <template repeat.for="todo of todos">
+      <li if.bind="['Tout', todo.category].includes(displayedCategory)" data-testid="todo-${$index + 1}">
+        <span if.bind="todo.category" data-testid="text.todo_category-${$index + 1}">${todo.category}</span>
+        <input type="checkbox" checked.bind="todo.done" data-testid="input.checkbox.done-${$index + 1}">
+        <span css="text-decoration: ${todo.done ? 'line-through' : 'none'}"
+          data-testid="text.todo_description-${$index + 1}">
+          ${todo.description}
+        </span>
+        <button click.trigger="removeTodo(todo)" data-testid="button.remove_todo-${$index + 1}">Supprimer</button>
+      </li>
+    </template>
+  </ul>
+
+  <strong>Catégories :</strong>
+  <label repeat.for="category of categoriesToDisplay">
+    <input type="radio" name="category_to_display" value.bind="category" checked.bind="displayedCategory"
+      data-testid="input.radio.category_${category}">
+    ${category}
+  </label>
+</template>
