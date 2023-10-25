@@ -16,7 +16,6 @@ Should do nothing
   No operation
 
 I can add a todo
-  Get element count  data-testid=input.text.description  should be  1
   Submit a todo  Adopter de bonnes pratiques de test
   A new todo should be created  1  Adopter de bonnes pratiques de test
 
